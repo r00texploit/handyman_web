@@ -1,27 +1,60 @@
-name: Deploy
+# name: Deploy
 
-# Trigger the workflow on push and 
-# pull request events on the production branch
+# # Trigger the workflow on push and 
+# # pull request events on the production branch
+# on:
+#   push:
+#     branches:
+#       - production
+#   pull_request:
+#     branches:
+#       - production
+      
+# # Authenticate to the the server via ssh 
+# # and run our deployment script 
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps: 
+#       - uses: actions/checkout@v2
+#       - name: Deploy to server
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ secrets.HOST }}
+#           username: ${{ secrets.USERNAME }}
+#           port: ${{ secrets.PORT }}
+#           key: ${{ secrets.SSHKEY }}
+#           script: "cd /var/www/html && ./.scripts/deploy.sh"
+name: Deploy Laravel Application
+
 on:
   push:
     branches:
-      - production
-  pull_request:
-    branches:
-      - production
-      
-# Authenticate to the the server via ssh 
-# and run our deployment script 
+      - production  # Change this to your deployment branch
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/checkout@v2
-      - name: Deploy to server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.SSHKEY }}
-          script: "cd /var/www/html && ./.scripts/deploy.sh"
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install SSH Client
+      run: sudo apt-get install -y ssh
+
+    - name: Setup SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          cd /var/www/html  # Change to your application directory on the server
+          git pull origin production
+          composer install --no-interaction --prefer-dist --optimize-autoloader
+          php artisan migrate --force
+          php artisan config:cache
+          php artisan route:cache
+          php artisan view:cache
