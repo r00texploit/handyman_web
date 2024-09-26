@@ -22,7 +22,7 @@ class AddLanguageOptionToAppSettingsTable extends Migration
         foreach ($rows as $row) {
             DB::table('app_settings')
                 ->where('id', $row->id)
-                ->update(['language_option' => '["nl","fr","it","pt","es","en"]' ]);
+                ->update(['language_option' => '["ar","en"]' ]);
         }
     }
 

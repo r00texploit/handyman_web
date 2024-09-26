@@ -21,13 +21,13 @@ class AppDownloadsTableSeeder extends Seeder
         \DB::table('app_downloads')->insert(array (
             0 => 
             array (
-                'appstore_url' => 'https://apps.apple.com/us/app/handyman-service-user/id1591427211',
+                'appstore_url' => 'https://apps.apple.com',
                 'created_at' => '2023-10-12 11:43:01',
                 'description' => NULL,
                 'id' => 1,
-                'playstore_url' => 'https://play.google.com/store/apps/details?id=com.iqonic.servicebooking',
-                'provider_appstore_url' => 'https://apps.apple.com/in/app/handyman-provider-app/id1596025324',
-                'provider_playstore_url' => 'https://play.google.com/store/apps/details?id=com.iqonic.provider',
+                'playstore_url' => 'https://play.google.com',
+                'provider_appstore_url' => 'https://apps.apple.com',
+                'provider_playstore_url' => 'https://play.google.com',
                 'title' => 'Play Store And App Store Url',
                 'updated_at' => '2023-10-12 11:43:01',
             ),

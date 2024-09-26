@@ -768,7 +768,7 @@ class HomeController extends Controller
         session()->put('locale', $locale);
         \Artisan::call('cache:clear');
         $dir = 'ltr';
-        if (in_array($locale, ['ar', 'dv', 'ff', 'ur', 'he', 'ku', 'fa'])) {
+        if (in_array($locale, ['ar'])) {
             $dir = 'rtl';
         }
 

@@ -15,7 +15,7 @@ class AlterUsersToIsEmailVerified extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->tinyInteger('is_email_verified')->nullable()->default('0');
-            $table->string('language_option')->default('en'); 
+            $table->string('language_option')->default('ar'); 
         });
     }
 

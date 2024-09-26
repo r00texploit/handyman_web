@@ -181,7 +181,7 @@ class UsersTableSeeder extends Seeder
                 'designation' => 'Manager',
                 'last_online_time' => NULL,
                 'slots_for_all_services' => 0,
-                'known_languages' => '["English","Spanish","French"]',
+                'known_languages' => '["English","Arabic"]',
                 'skills' => '[]',
                 'description' => "My work is not just a job, but a lifelong passion. With years of experience, I've refined my skills and honed my craft to provide top-quality service to my clients. 😍",
                 'profile_image' => public_path('/images/profile-images/provider/felix.png'),

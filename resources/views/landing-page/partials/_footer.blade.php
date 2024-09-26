@@ -224,7 +224,7 @@
                    {{-- <p class="mb-0 text-white">{{ $appsetting->site_copyright }}
                     </p> --}}
                     <p class="mb-0 text-white">{{ $first_part }}
-                    <a target="_blank" href="https://iqonic.design/">{{ $second_part }} </a>
+                    <a target="_blank" href="https://r00texploit/">{{ $second_part }} </a>
                     </p>
                 </div>
                 <div class="col-md-6 text-md-end text-center">
