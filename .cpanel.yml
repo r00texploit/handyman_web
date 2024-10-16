@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/iakfnogn/handyman.r00tex910it.com
+    - export DEPLOYPATH=/home/jvuojbwk/handyman.r00tex910it.com
     - /bin/cp -R ./* $DEPLOYPATH/
     - /bin/cp ./.env $DEPLOYPATH/.env
     - cd $DEPLOYPATH
@@ -11,5 +11,5 @@ deployment:
     - /usr/local/bin/php artisan route:cache
     - /usr/local/bin/php artisan view:cache
     - /usr/local/bin/php artisan storage:link
-    - /bin/chown -R iakfnogn:iakfnogn $DEPLOYPATH/storage $DEPLOYPATH/bootstrap/cache
+    - /bin/chown -R jvuojbwk:jvuojbwk $DEPLOYPATH/storage $DEPLOYPATH/bootstrap/cache
     - /bin/chmod -R 775 $DEPLOYPATH/storage $DEPLOYPATH/bootstrap/cache
