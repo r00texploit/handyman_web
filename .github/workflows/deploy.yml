@@ -31,8 +31,7 @@ on:
   push:
     branches:
       - production  # Change this to your deployment branch
-=======
-      - production
+
   pull_request:
     branches:
       - production
