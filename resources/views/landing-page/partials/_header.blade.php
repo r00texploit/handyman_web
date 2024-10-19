@@ -43,14 +43,14 @@
                         </svg>
                      </a>
                      <div class="dropdown-menu dropdown-menu-end">
-                        <!-- <a class="dropdown-item d-block" href="#">
+                        <a class="dropdown-item d-block" href="">
                            العربی
                         </a>
-                        <a class="dropdown-item d-block" href="https://apps.iqonic.design/frezka/app/language/fr">
+                        <!-- <a class="dropdown-item d-block" href="https://apps.r00texploit/frezka/app/language/fr">
                            French
                         </a> -->
                         <?php
-                              $language_option = sitesetupSession('get')->language_option ?? ["nl","fr","it","pt","es","en"];
+                              $language_option = sitesetupSession('get')->language_option ?? ["ar","en"];
                               if (!empty($language_option)) {
                                  $language_array = languagesArray($language_option);
                               }

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ session()->has('dir') ? session()->get('dir') : 'ltr' }}">
+=======
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ session()->has('dir') ? session()->get('dir') : 'ltr'  }}">
+>>>>>>> 24cad1cf10b7192873cea0fb187d8b789d926e25
 <head>
     @yield('before_head')
     @include('landing-page.partials._head') 
