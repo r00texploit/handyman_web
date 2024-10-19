@@ -38,11 +38,11 @@ jobs:
     - name: Setup SSH
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSHKEY }}
-        port: ${{ secrets.PORT }}
-        script: |
+         host: ${{ secrets.HOST }}
+         username: ${{ secrets.USERNAME }}
+         key: ${{ secrets.SSHKEY }}  # Ensure this is correctly set to your private key
+         port: ${{ secrets.PORT }}
+         script: |
           cd /repositories  # Change to your application directory on the server
           git pull origin production
           composer install --no-interaction --prefer-dist --optimize-autoloader
