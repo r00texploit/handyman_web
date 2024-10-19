@@ -31,12 +31,21 @@ on:
   push:
     branches:
       - production  # Change this to your deployment branch
+=======
+      - production
+  pull_request:
+    branches:
+      - production
+      
+# Authenticate to the the server via ssh 
+# and run our deployment script 
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+
     - name: Checkout code
       uses: actions/checkout@v2
 
