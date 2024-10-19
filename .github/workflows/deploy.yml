@@ -51,7 +51,7 @@ jobs:
         key: ${{ secrets.SSHKEY }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /var/www/html  # Change to your application directory on the server
+          cd /repositories  # Change to your application directory on the server
           git pull origin production
           composer install --no-interaction --prefer-dist --optimize-autoloader
           php artisan migrate --force
