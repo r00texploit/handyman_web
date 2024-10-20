@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - production
+      
+# Authenticate to the the server via ssh 
+# and run our deployment script 
 
 jobs:
   deploy:
@@ -16,28 +19,23 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Add GitHub to known_hosts
+      run: |
+            mkdir -p ~/.ssh
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+
     - name: Install SSH Client
       run: sudo apt-get install -y ssh
-
-    - name: Debug SSH Setup
-      run: |
-        echo "Host: ${{ secrets.HOST }}"
-        echo "Username: ${{ secrets.USERNAME }}"
-        echo "Port: ${{ secrets.PORT }}"
-
-    - name: Verbose SSH Output
-      run: |
-        set -x  # Enable debugging
-        ssh -v -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p ${{ secrets.PORT }} exit
 
     - name: Setup SSH
       uses: appleboy/ssh-action@master
       with:
-         host: ${{ secrets.HOST }}
-         username: ${{ secrets.USERNAME }}
-         key: ${{ secrets.SSHKEY }}  # Ensure this is correctly set to your private key
-         port: ${{ secrets.PORT }}
-         script: |
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSHKEY }}
+        port: ${{ secrets.PORT }}
+        script: |
           cd /repositories  # Change to your application directory on the server
           git pull origin production
           composer install --no-interaction --prefer-dist --optimize-autoloader
