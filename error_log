@@ -1,0 +1,6 @@
+[24-Mar-2025 23:24:28 UTC] PHP Warning:  require(/home/xpmtyqeq/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/xpmtyqeq/public_html/public/index.php on line 34
+[24-Mar-2025 23:24:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/xpmtyqeq/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/xpmtyqeq/public_html/public/index.php:34
+Stack trace:
+#0 /home/xpmtyqeq/public_html/server.php(21): require_once()
+#1 {main}
+  thrown in /home/xpmtyqeq/public_html/public/index.php on line 34
