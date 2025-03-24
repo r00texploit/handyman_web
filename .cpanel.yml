@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/jvuojbwk/handyman.r00tex910it.com
+    - export DEPLOYPATH=/home/xpmtyqeq/public_html
     - /bin/cp -R ./* $DEPLOYPATH/
     - /bin/cp ./.env $DEPLOYPATH/.env
     - cd $DEPLOYPATH
