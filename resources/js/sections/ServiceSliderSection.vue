@@ -79,7 +79,7 @@
 import ServiceCard from '../components/ServiceCard.vue';
 
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import ServiceShimmer  from '../shimmer/ServiceShimmer.vue';
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
