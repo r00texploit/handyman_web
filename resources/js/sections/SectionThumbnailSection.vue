@@ -23,7 +23,7 @@
 <script setup>
 import { ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Controller } from 'swiper';
+import { Controller } from 'swiper/modules';
 
 const props = defineProps(['attachments']);
 

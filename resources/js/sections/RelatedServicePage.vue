@@ -24,7 +24,7 @@
   <script setup>
   import { defineProps } from 'vue'
   import ServiceCard from '../components/ServiceCard.vue'
-  import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+  import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
   // Import Swiper Vue.js components
   import { Swiper, SwiperSlide } from 'swiper/vue'
   const modules = [Navigation, Pagination, Scrollbar, A11y]

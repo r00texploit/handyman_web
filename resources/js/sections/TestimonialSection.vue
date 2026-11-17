@@ -63,7 +63,7 @@
 import TestimonialCard from "../components/TestimonialCard.vue"
 import ClientsShimmer  from '../shimmer/ClientsShimmer.vue'
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 

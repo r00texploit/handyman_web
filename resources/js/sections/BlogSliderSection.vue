@@ -31,7 +31,7 @@ import { computed} from 'vue';
 import BlogCard from '../components/BlogCard.vue';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import {useSection} from '../store/index'
 import {useObserveSection} from '../hooks/Observer'
 

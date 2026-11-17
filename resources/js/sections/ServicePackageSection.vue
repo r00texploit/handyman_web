@@ -35,7 +35,7 @@
 <script setup>
 import { defineProps } from 'vue';
 import ServicePackageCard from '../components/ServicePackageCard.vue';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
 const modules = [Navigation, Pagination, Scrollbar, A11y]
